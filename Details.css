@@ -1,0 +1,266 @@
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    background-color: #333333;
+    padding: 0px;
+    height: 60px;
+    font-size: 25px;
+    font-family: 'Yellowtail', cursive;
+}
+.head a{
+    color: whitesmoke;
+}
+
+.head a:nth-child(2){
+    color: #4CAF50;
+}
+
+.head a:hover{
+    color: #4CAF50;
+}
+
+
+#map_pos{
+    float: right;
+    margin-right: 1%;
+    margin-top: 2%;
+    width: 70%;
+    height: 100%
+
+}
+#map{
+    width: 1000px;
+    height: 900px;
+    border: #000000 solid 3px;
+}
+
+
+#info{
+    border: whitesmoke solid 3px;
+    color: whitesmoke;
+    margin-left:2%;
+    margin-top: 2%;
+    float:left;
+    background-color: #333333;
+    min-height: auto;
+    width: 25%;
+    opacity: 0.9;
+    border-radius: 30px;
+}
+
+#info a{
+    color: whitesmoke;
+}
+
+#info a:hover{
+    color: #4CAF50;
+}
+
+#info > h2{
+    margin-top: 10px;
+    margin-left:20px;
+    text-wrap: normal;
+    margin-right:20px;
+    font-family: 'Arial', sans-serif;
+}
+
+#info > h2:nth-child(3), #info > h2:nth-child(4) {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#info >h2:last-child{
+    margin-bottom: 30px;
+}
+
+#map, #info {
+    flex-grow: 1;
+}
+#reviews{
+    color: whitesmoke;
+    border: whitesmoke solid 3px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    float:left;
+    clear: left;
+    background-color: #333333;
+    min-height: auto;
+    min-width: auto;
+    opacity: 0.9;
+    border-radius: 30px;
+}
+
+#reviews h2{
+    margin-top: 10px;
+    margin-left: 20px;
+    text-wrap: normal;
+    margin-right:20px;
+    font-family: 'Arial', sans-serif;
+}
+
+#reviews li h2:nth-child(-n+2){
+    font-weight: bold;
+    display: inline ;
+}
+
+#reviews li h2:nth-child(3){
+    display: block;
+}
+
+#button button{
+    float: right;
+    clear: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-weight: bold;
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    border: whitesmoke solid 2px;
+    background-color: #333333;
+    color: whitesmoke;
+    min-width: auto;
+    margin-right: 2%;
+    border-radius: 30px;
+}
+
+#button button:hover{
+    color: #4CAF50;
+    border: #4CAF50 solid 2px;
+    cursor: pointer;
+
+}
+
+.Main-Comment{
+    background-color: #333333;
+    color: whitesmoke;
+    width: 500px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s , visibility 0.4s;
+    border-radius: 20%;
+    border: whitesmoke solid 3px;
+}
+
+.open-popup{
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.Main-Comment #close{
+    width: 50px;
+    height: 50px;
+    background-color: #333333;
+    color: whitesmoke;
+    font-size: 40px;
+    font-weight: bolder;
+    border: whitesmoke solid 2px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+.Main-Comment #close:hover{
+    border: #4CAF50 solid 2px;
+    color: #4CAF50;
+
+}
+
+.Main-Comment #Coment-elements{
+    margin-left: 3%;
+    margin-top: 20px;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Main-Comment #Coment-elements #Submit{
+    background-color: #333333;
+    border: whitesmoke solid 2px;
+    color: whitesmoke;
+    height: 50px;
+    width: 150px;
+    border-radius: 15%;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.Main-Comment #Coment-elements #Reset{
+    background-color: #333333;
+    border: whitesmoke solid 2px;
+    color: whitesmoke;
+    height: 50px;
+    width: 150px;
+    border-radius: 15%;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.Main-Comment #Coment-elements #Submit:hover{
+    border: #4CAF50 solid 2px;
+    color: #4CAF50;
+}
+
+.Main-Comment #Coment-elements #Reset:hover{
+    border: #4CAF50 solid 2px;
+    color: #4CAF50;
+}
+
+.Main-Comment #Coment-elements #Name , #Surname{
+    text-align: center;
+}
+
+.Main-Comment #Coment-elements #Comment-text{
+    width: 400px;
+    height: 200px;
+
+}
+
+.Main-Comment #Coment-elements #rating-pos li ul{
+    display: inline;
+    justify-content: center;
+    marker: none;
+}
+
+.Main-Comment #Coment-elements #rating-pos li ul input{
+    cursor: pointer;
+}
+
+
+.Main-Comment #Coment-elements #popupButtons{
+    margin-top: 20px;;
+}
+.Main-Comment #Coment-elements #popupButtons button:nth-child(1){
+    margin-right: 30px;
+    width: 100px;
+    height: 50px;
+    border: black solid 1px;
+    border-radius: 30%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Main-Comment #Coment-elements #popupButtons button:nth-child(2){
+    margin-left: 30px;
+    width: 100px;
+    height: 50px;
+    border: black solid 1px;
+    border-radius: 30%;
+    font-weight: bold;
+    cursor: pointer;
+}
