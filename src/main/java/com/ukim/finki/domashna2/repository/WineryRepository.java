@@ -15,7 +15,6 @@ public interface WineryRepository extends JpaRepository<WineryInfo, Long> {
     Page<WineryInfo> findAll(Pageable pageable);
     Optional<WineryInfo> findByName(String name);
     Page<WineryInfo> findByNameContainingIgnoreCase(String name, Pageable pageable);
-    Page<WineryInfo> findAllByOrderByNumRatingsDesc(Pageable pageable);
 
     @Query("SELECT r.rating FROM WineryInfo w JOIN w.reviews r WHERE w.id = :wineryId")
     List<Float> getRatingsByWineryId(@Param("wineryId") Long wineryId);

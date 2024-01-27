@@ -55,7 +55,7 @@ public class WineryServiceImpl implements WineryService {
         return wineryRepository.findById(id).orElse(null);
     }
 
-    @Value("https://seal-app-gfvee.ondigitalocean.app")
+    @Value("https://sea-turtle-app-ggmyu.ondigitalocean.app")
     private String apiBaseUrl;
 
 
