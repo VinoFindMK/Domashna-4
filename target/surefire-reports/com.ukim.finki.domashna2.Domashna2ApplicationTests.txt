@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.ukim.finki.domashna2.Domashna2ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.757 s -- in com.ukim.finki.domashna2.Domashna2ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.185 s -- in com.ukim.finki.domashna2.Domashna2ApplicationTests
