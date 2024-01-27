@@ -45,7 +45,7 @@ main {
 
 #cards {
     display: flex;
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     background-color: #333333;
@@ -56,7 +56,7 @@ main {
 
 .card {
     color: whitesmoke;
-    flex: 0 0 min(100%, 245px); /* Prevent cards from growing, set a maximum width */
+    flex: 0 0 min(100%, 245px);
     border-left: 2px solid whitesmoke;
     border-right: 2px solid whitesmoke;
     border-radius: 10px;
@@ -65,7 +65,7 @@ main {
     grid-template-rows: auto auto;
     align-items: center;
     gap: 1rem;
-    margin: 1rem; /* Add margin for spacing between cards */
+    margin: 1rem;
 }
 
 .card img {

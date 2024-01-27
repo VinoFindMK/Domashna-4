@@ -10,9 +10,14 @@ import com.ukim.finki.domashna2.repository.WineryUserReviewRepository;
 import com.ukim.finki.domashna2.service.WineryService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +55,31 @@ public class WineryServiceImpl implements WineryService {
         return wineryRepository.findById(id).orElse(null);
     }
 
-    @Override
+    @Value("https://seal-app-gfvee.ondigitalocean.app")
+    private String apiBaseUrl;
+
+
     public void saveUserReviewToDB(WineryUserReview wineryUserReview) {
-        wineryUserReviewRepository.save(wineryUserReview);
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/json");
+        HttpEntity<WineryUserReview> requestEntity = new HttpEntity<>(wineryUserReview, headers);
+
+        String apiUrl = apiBaseUrl + "/api/wineries/" + wineryUserReview.getWineryId() + "/reviews";
+        System.out.println("URL: " + apiUrl);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<WineryUserReview> responseEntity = restTemplate.postForEntity(
+                apiBaseUrl + "/api/wineries/" + wineryUserReview.getWineryId() + "/reviews",
+                requestEntity,
+                WineryUserReview.class);
+
+        if (responseEntity.getStatusCode().is2xxSuccessful()) {
+            WineryUserReview savedReview = responseEntity.getBody();
+            wineryUserReviewRepository.save(savedReview);
+         //   System.out.println(savedReview);
+        } else {
+            System.out.println(":(");
+        }
     }
 
     @Override
